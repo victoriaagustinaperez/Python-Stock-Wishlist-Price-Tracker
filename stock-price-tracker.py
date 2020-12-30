@@ -10,6 +10,22 @@ tech_symbols = "WUGI CEVA FIVG INSG AMD VUZI TSLA THNQ DT DLR BOTZ NIO INTC NVDA
 www_symbols = "BIDU GOOG GOOGL".split()
 energy_symbols = "ALB ENPH SEDG BEP".split()
 
+options = "Track Default List, Show Default List, \
+    Add to Default, Edit Default List, Add new List,\
+        Quit".split(",")
+        
+def show_default():
+    pass
+
+def add_to_default():
+    pass
+
+def edit_default():
+    pass
+
+def add_list():
+    pass
+
 #define function called get_prices which takes argument as split objects in list "symbols" and returns price
 def get_prices(test_symbols):
     test_symbols.sort() #sorts in alphabetical order
@@ -29,8 +45,13 @@ def get_prices(energy_symbols):
 
 #define entry point for application
 def main():
-    while True: #infinite loop
-        print("\nGeneral (test) stocks")
+    run_program = True #hook feature to later change to False for Exit menu option
+    while run_program: #infinite loop
+        print("\nChoose Option:") #menu heading
+        for i in range(len(options) + 1):
+            print("{} - {}".format(i, options[i-1]))
+            
+        print("\n-Test- General stocks")
         print(get_prices(test_symbols)) #prints prices of symbols
         
         print("\nTech stocks")

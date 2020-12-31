@@ -14,18 +14,35 @@ options = " Track Default List, Show Default List, \
 Add to Default, Edit Default List, Add new List, \
         Quit".split(",")
         
-        
-def show_default(test_symbols):
-    pass
+def show_default(test_symbols): #2
+    test_symbols.sort()
+    return test_symbols
 
-def add_to_default():
-    pass
+def add_to_default(test_symbols): #3
+    print("Enter symbol to add: ")
+    symbol = input().upper() #convert input to uppercase
+    while symbol != '':
+        test_symbols.append(symbol)
+        symbol = input("Hit enter at anytime to quit program.\nEnter symbol to add:") #hook
+    
+def edit_default(test_symbols): #4
+    print("Select symbol to delete: ")
+    #select from menu of symbols
+    for i in range(1, len(test_symbols) + 1):
+        print("{} - {}".format(i, test_symbols[i-1]))
+    remove = test_symbols.pop(int(input())-1)
+    print("{} removed".format(remove))
 
-def edit_default():
-    pass
-
-def add_list():
-    pass
+def add_list(): #5
+    new_list = []
+    print("Enter symbol to add: ")
+    symbol = input().upper()
+    while symbol != '':
+        new_list.append(symbol)
+        symbol = input("Hit enter at anytime to quit program.\nEnter symbol to add:")
+    while True:
+        print(get_prices(new_list))
+        print("CNTL + C to quit")
 
 #define function called get_prices which takes argument as split objects in list "symbols" and returns price
 def get_prices(test_symbols):
@@ -70,15 +87,14 @@ def main():
                 print(get_prices(energy_symbols))
         
                 print("\nCNTL + C to quit") #instructions for user to exit loop
-                sleep(10) #10 second refresh counter    
+                sleep(5) #5 second refresh counter    
         
         elif choice == 2:
             print(show_default(test_symbols))
-            
         elif choice == 3:
-            add_to_default()            
+            add_to_default(test_symbols)            
         elif choice == 4:
-            edit_default()        
+            edit_default(test_symbols)     
         elif choice == 5:
             add_list()            
         elif choice == 6:

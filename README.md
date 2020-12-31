@@ -9,10 +9,15 @@ Within the program, find my recommended stocks within the tech, WWW and energy s
 Menu options within the program include:
 
 1 -  Track all Lists
+
 2 -  Show all Lists
+
 3 -  Add to Default List
+
 4 -  Edit Default List
+
 5 -  Search live price of any stock:
+
 6 -          Quit
 
 Enjoy!

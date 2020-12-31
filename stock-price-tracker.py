@@ -10,11 +10,12 @@ tech_symbols = "WUGI CEVA FIVG INSG AMD VUZI TSLA THNQ DT DLR BOTZ NIO INTC NVDA
 www_symbols = "BIDU GOOG GOOGL".split()
 energy_symbols = "ALB ENPH SEDG BEP".split()
 
-options = "Track Default List, Show Default List, \
-    Add to Default, Edit Default List, Add new List,\
+options = " Track Default List, Show Default List, \
+Add to Default, Edit Default List, Add new List, \
         Quit".split(",")
         
-def show_default():
+        
+def show_default(test_symbols):
     pass
 
 def add_to_default():
@@ -45,26 +46,43 @@ def get_prices(energy_symbols):
 
 #define entry point for application
 def main():
-    run_program = True #hook feature to later change to False for Exit menu option
+    run_program = True #hook feature to later change to False for Quit menu option
     while run_program: #infinite loop
         print("\nChoose Option:") #menu heading
-        for i in range(len(options) + 1):
+        for i in range(1, len(options) + 1):
             print("{} - {}".format(i, options[i-1]))
+        #create checkpoint so not constantly running
+        choice = int(input()) #user input integer
+        
+        #make a structure to implement certain code when a choice is made
+        if choice == 1:
+            while True: #implements counter
+                print("\n-Test- General stocks")
+                print(get_prices(test_symbols)) #prints prices of symbols
+        
+                print("\nTech stocks")
+                print(get_prices(tech_symbols))
+        
+                print("\nWWW stocks")
+                print(get_prices(www_symbols))
             
-        print("\n-Test- General stocks")
-        print(get_prices(test_symbols)) #prints prices of symbols
+                print("\nEnergy stocks")
+                print(get_prices(energy_symbols))
         
-        print("\nTech stocks")
-        print(get_prices(tech_symbols))
+                print("\nCNTL + C to quit") #instructions for user to exit loop
+                sleep(10) #10 second refresh counter    
         
-        print("\nWWW stocks")
-        print(get_prices(www_symbols))
-        
-        print("\nEnergy stocks")
-        print(get_prices(energy_symbols))
-        
-        print("\nCNTL + C to quit") #instructions for user to exit loop
-        sleep(10) #sleep for 10 seconds to refresh list of quotes
+        elif choice == 2:
+            print(show_default(test_symbols))
+            
+        elif choice == 3:
+            add_to_default()            
+        elif choice == 4:
+            edit_default()        
+        elif choice == 5:
+            add_list()            
+        elif choice == 6:
+            run_program = False #Quit
         
 if __name__ == "__main__": #run upon initialization
     main()

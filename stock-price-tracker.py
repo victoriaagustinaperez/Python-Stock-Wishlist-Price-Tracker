@@ -6,7 +6,7 @@ from time import sleep
 symbols = "AMZN GOOG NFLX FB GLD SPY".split()
 
 #author's personal stock portfolio (compiled Dec 2020) of stocks projected to grow between years 2020-2030
-tech_symbols = "WUGI CEVA FIVG INSG AMD VUZI TSLA THNQ DT DLR BOTZ NIO INTC NVDA".split()
+tech_symbols = "WUGI CEVA FIVG INSG AMD VUZI TSLA THNQ DT DLR BOTZ NIO NVDA".split()
 www_symbols = "BIDU GOOG GOOGL".split()
 energy_symbols = "ALB ENPH SEDG BEP".split()
 

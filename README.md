@@ -1,4 +1,4 @@
-# Stock Portfolio Price Tracker
+# Stock Wishlist Price Tracker
 
 ### Python-based app that reports the live stock prices of some of my favorite options, as well as some added customization functionalities to help adjust to user preferences.
 
